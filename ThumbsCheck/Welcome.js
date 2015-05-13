@@ -9,12 +9,14 @@ var {
   TouchableHighlight,
 } = React;
 
-var Firebase = require('firebase-react-native');
+// var Firebase = require('firebase-react-native');
 
-var fb = new Firebase("https://popping-torch-1564.firebaseio.com");
+// var fb = new Firebase("https://popping-torch-1564.firebaseio.com/dogs.json");
 
 
 var Welcome = React.createClass({
+
+
 
   // getInitialState: function(){
   //   return {}
@@ -45,17 +47,45 @@ var Welcome = React.createClass({
   //   this.bindAsArray(ref, "users");
   // },
 
-  login() {
-    console.log("here");
-    console.log("this", this);
-    fb.set({name: "hello"});
-    // this.setState({name: "Luke"});
-    // console.log(this.setState);
-    // this.componentWillMount();
-    // this.ref["users"].push({name: "Bitsy"});
-    // fb.save({name: "Bitsy"});
-    // console.log("fb", fb);
-  },
+//   login() {
+//     var obj = {name: "Lauren"}
+//     return fetch('https://popping-torch-1564.firebaseio.com/lauren.json', {
+//       method: 'post',
+//       body: JSON.stringify(obj)
+//     }).then((res) => res.json());
+
+
+//     console.log("here");
+//     this.addNote("tom", "hellooos");
+// //     console.log("this", this);
+// //     console.log("fb", fb);
+// //     fb.set({name: "hello"});
+// //     fb.set({
+// //   title: "Hello World!",
+// //   author: "Firebase",
+// //   location: {
+// //     city: "San Francisco",
+// //     state: "California",
+// //     zip: 94103
+// //   }
+// // });
+//     // this.setState({name: "Luke"});
+//     // console.log(this.setState);
+//     // this.componentWillMount();
+//     // this.ref["users"].push({name: "Bitsy"});
+//     // fb.save({name: "Bitsy"});
+//     // console.log("fb", fb);
+//   },
+
+  login: function() {
+
+   var obj = JSON.stringify({name: "sam"});
+   return fetch('https://popping-torch-1564.firebaseio.com/mark.json', {
+     method: 'post',
+     body: function(){return obj},
+   }).then((res) => res.json());
+
+ },
 
 
   render: function() {
