@@ -25,7 +25,14 @@ var styles = StyleSheet.create({
   container: {
     padding: 30,
     marginTop: 65,
-    alignItems: 'center'
+    alignItems: 'center',
+    backgroundColor: 'pink',
+  },
+  active: {
+    padding: 30,
+    marginTop: 65,
+    alignItems: 'center',
+    backgroundColor: 'blue',
   },
   flowRight: {
     flexDirection: 'row',
@@ -79,6 +86,11 @@ var StudentMain = React.createClass({
   },
 
   vote: function(user, thumb) {
+
+
+    this.setState({active: true});
+    console.log("state", this.state);
+
     var obj = {};
     obj[user] =thumb;
 
@@ -122,7 +134,7 @@ var StudentMain = React.createClass({
 
   renderThumbsCheckView: function(){
     return(
-      <View style = {styles.container}>
+      <View style={[styles.container, this.state.active && styles.active]}>
         <Text style = {styles.description}>
           Thumbs on your understanding of React Native!
         </Text>
